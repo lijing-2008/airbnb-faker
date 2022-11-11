@@ -13,7 +13,7 @@ const SectionTabs = memo((props) => {
 	}
 	return (
 		<SectionTabsWrapper>
-			<ScrollView>
+			<ScrollView isBlur={true}>
 					{
 						tabNames.map((item, index) => {
 							return (
@@ -25,7 +25,6 @@ const SectionTabs = memo((props) => {
 							)
 						})
 					}
-
 			</ScrollView>
 		</SectionTabsWrapper>
 	)

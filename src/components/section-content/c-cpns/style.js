@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const ItemShowWrapper = styled.div`
+	flex-shrink: 0;
 	box-sizing: border-box;
 	width: ${props => props.itemWidth};
-	//padding: 8px;
 	
   .container {
     width: 100%;
@@ -27,6 +27,17 @@ export const ItemShowWrapper = styled.div`
 
     .text {
       padding-top: 8px;
+			.plus{
+				background-color: #71455C;
+				color: #fff;
+				padding: 0 4px;
+        margin-right: 4px;
+				text-transform: uppercase;
+				font-size: 12px;
+				line-height: 16px;
+				border-radius: 3.2px;
+				font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", PingFang-SC, "Hiragino Sans GB", 微软雅黑, "Microsoft YaHei", "Heiti SC", sans-serif;
+			}
 
       .message, .price {
         color: ${props => props.verifyColor};

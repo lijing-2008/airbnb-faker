@@ -19,3 +19,13 @@ export function getHomeRecommendInfo() {
 		url: "/home/hotrecommenddest"
 	})
 }
+export function getHomeForwardInfo() {
+	return ddRequest.get({
+		url: "/home/longfor"
+	})
+}
+export function getHomePlusInfo() {
+	return ddRequest.get({
+		url: "home/plus"
+	})
+}

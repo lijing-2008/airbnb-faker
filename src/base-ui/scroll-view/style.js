@@ -10,7 +10,6 @@ export const ScrollViewWrapper = styled.div`
 
     .scroll-content {
       display: flex;
-      //overflow: hidden;
       transition: transform 250ms ease-in;
     }
   }
@@ -40,12 +39,12 @@ export const ScrollViewWrapper = styled.div`
     width: 48px;
     height: 68px;
 		
-    &.left {
+    &.left-blur {
       transform: translate(-8px, -50%);
       background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 17%, rgba(255, 255, 255, 0) 100%);
     }
 
-    &.right {
+    &.right-blur {
 			right:0;
       transform: translate(0, -50%);
       background: linear-gradient(to left, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 17%, rgba(255, 255, 255, 0) 100%);

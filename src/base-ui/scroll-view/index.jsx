@@ -4,6 +4,8 @@ import IconArrowRightCircle from "@/assets/svg/icon-arrow-right-circle";
 import IconArrowLeftCircle from "@/assets/svg/icon_arrow-left-circle";
 
 const ScrollView = memo((props) => {
+	//props传入的数据
+	const {isBlur} = props
 	//定义内部状态
 	const [showRightBtn, setShowRightBtn] = useState(false)
 	const [showLeftBtn, setShowLeftBtn] = useState(false);
@@ -33,25 +35,28 @@ const ScrollView = memo((props) => {
 	}
 	return (
 		<ScrollViewWrapper>
-				{showLeftBtn &&
-					<>
-						<div className="control left" onClick={() => controlHandleClick(false)}>
-							<IconArrowLeftCircle/>
-						</div>
-						<div className="blur left"/>
-					</>
-				}
-				{showRightBtn &&
-					<>
-						<div className="control right" onClick={() => controlHandleClick(true)}>
-							<IconArrowRightCircle/>
-						</div>
-						<div className="blur right"/>
-					</>
-				}
-				<div className="content">
-					<div className="scroll-content" ref={scrollContentRef}>{props.children}</div>
-				</div>
+			{/*左侧按钮*/}
+			{showLeftBtn &&
+				<>
+					<div className="control left" onClick={() => controlHandleClick(false)}>
+						<IconArrowLeftCircle/>
+					</div>
+					{isBlur && <div className="blur left-blur"/>}
+				</>
+			}
+			{/*右侧按钮*/}
+			{showRightBtn &&
+				<>
+					<div className="control right" onClick={() => controlHandleClick(true)}>
+						<IconArrowRightCircle/>
+					</div>
+					{isBlur && <div className="blur right-blur"/>}
+				</>
+			}
+			{/*展示内容，content*/}
+			<div className="content">
+				<div className="scroll-content" ref={scrollContentRef}>{props.children}</div>
+			</div>
 		</ScrollViewWrapper>
 	)
 });

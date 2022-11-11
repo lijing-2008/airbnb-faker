@@ -1,9 +1,11 @@
-import React, {memo} from 'react';
+import React, {memo, useContext} from 'react';
 import {ItemShowWrapper} from "./style";
 import {Rating} from "@mui/material";
+import {useHomeContext} from "@/hooks";
 
 const ItemShow = memo((props) => {
-	const {itemData, itemWidth="25%"} = props
+	const {itemData } = props
+	const {isPlus, itemWidth}=useHomeContext()
 	return (
 		<ItemShowWrapper
 			verifyColor={itemData?.verify_info?.text_color || "#39576a"}
@@ -14,7 +16,10 @@ const ItemShow = memo((props) => {
 					<img src={itemData.picture_url} alt="img"/>
 				</div>
 				<div className="text">
-					<div className="message">{itemData.verify_info.messages.join("·")}</div>
+					<div>
+						{isPlus && <span className="plus">plus</span>}
+						<span className="message">{itemData.verify_info.messages.join("·")}</span>
+					</div>
 					<div className="name multi">{itemData.name}</div>
 					<div className="price">{itemData.price_format}/晚</div>
 					<div className="star">
