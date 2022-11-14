@@ -4,7 +4,7 @@ export const FilterWrapper = styled.div`
   position: sticky;
   top: 80px;
 	background-color: #fff;
-	z-index: 100;
+	z-index: 10;
 
   .filter {
     position: sticky;

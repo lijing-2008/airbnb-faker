@@ -13,7 +13,6 @@ export const HeaderRightWrapper = styled.div`
     align-items: center;
 
     .btn {
-      height: 18px;
       line-height: 18px;
       padding: 12px 15px;
       cursor: pointer;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import {HashRouter} from "react-router-dom";
 import {ThemeProvider} from "styled-components";
@@ -12,11 +12,13 @@ import theme from "./assets/theme";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	<HashRouter>
-		<Provider store={store}>
+	<Provider store={store}>
+		<Suspense fallback="loading...">
 			<ThemeProvider theme={theme}>
-				<App/>
+				<HashRouter>
+					<App/>
+				</HashRouter>
 			</ThemeProvider>
-		</Provider>
-	</HashRouter>
+		</Suspense>
+	</Provider>
 );
