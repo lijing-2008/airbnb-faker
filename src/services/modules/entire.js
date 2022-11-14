@@ -1,0 +1,10 @@
+import ddRequest from "../index"
+export function getEntireRoomList(offset=0, size=20) {
+	return ddRequest.get({
+		url:"/entire/list",
+		params:{
+			offset,
+			size
+		}
+	})
+}

@@ -1,4 +1,4 @@
-import React, {memo, useContext, useEffect} from 'react';
+import React, {memo,  useEffect} from 'react';
 import TopBanner from "./banner";
 import {HomeWrapper} from "./style";
 import {shallowEqual, useDispatch, useSelector} from "react-redux";

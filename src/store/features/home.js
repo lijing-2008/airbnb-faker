@@ -56,8 +56,6 @@ const homeSlice = createSlice({
 		changePlusAction(state, {payload}){
 			state.plusInfo = payload
 		}
-
-
 	},
 })
 export const {
