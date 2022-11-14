@@ -8,7 +8,6 @@ const fetchEntireListDataAction = createAsyncThunk("fetchEntireList", (page=0, {
 	dispatch(changeCurrentPage(page))
 	//获取最新数据
 	getEntireRoomList(page * 20).then((res) => {
-		console.log(res)
 		dispatch(changeRoomList(res.list))
 		dispatch(changeTotalCount(res.totalCount))
 		dispatch(changeIsLoading(false))

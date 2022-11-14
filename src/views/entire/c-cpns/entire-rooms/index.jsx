@@ -18,7 +18,6 @@ const EntireRooms = memo((props) => {
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
 	const itemClickHandle = useCallback((itemData) => {
-		console.log(itemData)
 		dispatch(changeDetailInfoAction(itemData))
 		navigate("/detail")
 	},[navigate,dispatch])

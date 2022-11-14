@@ -10,11 +10,12 @@ import classNames from "classnames";
 
 const ItemShow = memo((props) => {
 	const {itemData, itemClick} = props
-	console.log(itemData)
 	const {isPlus, itemWidth} = useHomeContext()
 	const [selectIndex, setSelectIndex] = useState(0);
 	const slickRef = useRef()
-	const controlClickHandle = (isRight = true) => {
+	const controlClickHandle = (e, isRight = true) => {
+		//阻止冒泡事件
+		e.stopPropagation()
 		isRight ? slickRef.current.next() : slickRef.current.prev()
 		let newIndex = selectIndex
 		if (isRight) {
@@ -32,10 +33,10 @@ const ItemShow = memo((props) => {
 	const sliderElement = (
 		<div className="slider">
 			<div className="control">
-				<div className="btn left" onClick={(event) => controlClickHandle(false)}>
+				<div className="btn left" onClick={(e) => controlClickHandle(e, false)}>
 					<IconArrowLeft width={20} height={20}/>
 				</div>
-				<div className="btn right" onClick={e => controlClickHandle()}>
+				<div className="btn right" onClick={e => controlClickHandle(e)}>
 					<IconArrowRight width={20} height={20}/>
 				</div>
 			</div>
@@ -84,7 +85,7 @@ const ItemShow = memo((props) => {
 		<ItemShowWrapper
 			verifyColor={itemData?.verify_info?.text_color || "#39576a"}
 			itemWidth={itemWidth}
-			onClick = {( ) => handleItemClick(itemData)}
+			onClick={() => handleItemClick(itemData)}
 		>
 			<div className="container">
 				{

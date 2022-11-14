@@ -1,5 +1,7 @@
 import React, {memo} from 'react';
 import {useSelector} from "react-redux";
+import {DetailWrapper} from "@/views/detail/style";
+import DetailPicture from "@/views/detail/detail-pictures";
 
 const Detail = memo((props) => {
 	const {detailInfo} = useSelector(( state ) => {
@@ -7,17 +9,10 @@ const Detail = memo((props) => {
 			detailInfo: state.detail.detailInfo
 		}
 	})
-	console.log(detailInfo)
 	return (
-		<div>
-			{
-				detailInfo?.picture_urls?.map(( item ) => {
-					return(
-						<div key={item}>{item}</div>
-					)
-				})
-			}
-		</div>
+		<DetailWrapper>
+			<DetailPicture pictureUrls={detailInfo?.picture_urls}/>
+		</DetailWrapper>
 	)
 });
 
