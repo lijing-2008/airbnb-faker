@@ -1,4 +1,4 @@
-import React, {memo, useRef, useState} from 'react';
+import React, {memo, useState} from 'react';
 import Indicator from "@/base-ui/indicator";
 import {DemoWrapper} from "@/views/demo/style";
 
@@ -7,10 +7,10 @@ const Demo = memo((props) => {
 	const [selectedIndex, setSelectedIndex] = useState(0);
 	const toggleClickHandle = (isNext = true) => {
 		let newIndex = isNext ? selectedIndex + 1 : selectedIndex - 1
-		if (newIndex<0){
-			newIndex = names.length -1
+		if (newIndex < 0) {
+			newIndex = names.length - 1
 		}
-		if (newIndex===names.length){
+		if (newIndex === names.length) {
 			newIndex = 0
 		}
 		setSelectedIndex(newIndex)

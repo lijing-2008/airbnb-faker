@@ -1,21 +1,19 @@
-import React, {memo, useContext} from 'react';
+import React, {memo} from 'react';
 import {SectionContentWrapper} from "./style";
 import ItemShow from "./c-cpns";
 import {calcListNum} from "@/utils";
-import {HomeContext} from "@/context";
 import {useHomeContext} from "@/hooks";
 
 
 const SectionContent = memo((props) => {
-	const {dataList } = props
-	const homePlusContext = useContext(HomeContext)
-	const {itemWidth, rowNum}=useHomeContext()
+	const {dataList} = props
+	const {itemWidth, rowNum} = useHomeContext()
 	return (
 		<SectionContentWrapper>
 			{
-				dataList.slice(0, calcListNum(itemWidth,rowNum)).map((item) => {
+				dataList.slice(0, calcListNum(itemWidth, rowNum)).map((item) => {
 					return (
-						<ItemShow key={item.id} itemData={item} />
+						<ItemShow key={item.id} itemData={item}/>
 					)
 				})
 			}
